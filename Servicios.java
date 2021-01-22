@@ -51,9 +51,21 @@ public class Servicios {
 	@Inject
 	private ClienteON clion;
 	
+	private String ipGlobal;
+	
 
 
 	Registro registro;
+	
+	
+
+
+	public void setIpGlobal(String ipGlobal) {
+		System.out.println("Esta ip vino del mas alla "+ipGlobal);
+		this.ipGlobal = ipGlobal;
+	}
+
+
 	/**
 	 * Metodo del login
 	 * @param un
@@ -115,9 +127,11 @@ public class Servicios {
 	@GET
 	@Path("/ip")
 	@Produces("application/json")
-	public String getIp(){
-		String ip = "192.168.0.1";
-		return ip;
+	public String getIpPing(String ip) {
+		System.out.println("Si entra al metodo "+ ip);
+		String ipRetorna = "";
+		ipRetorna = "8.8.8.8";
+		return ipRetorna;
 	}
 	
 	@GET
